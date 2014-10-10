@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <span id="timer"></span>
+  <script src="timer.js"></script>
+  <script>
+    var timerElement = document.getElementById( "timer" );
+    var timer = new sp.Timer( 86420000, {interval:1000} );
+
+    timer.addEventListener( "changed", function( timedelta ){
+      timerElement.innerHTML = timedelta.day + " day " +
+                               timedelta.hour + " hour " +
+                               timedelta.minute + " min " +
+                               timedelta.second + " sec";
+    });
+    timer.start();
+  </script>
+</body>
+</html>
+

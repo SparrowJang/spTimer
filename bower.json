@@ -1,0 +1,14 @@
+{
+  "name": "sp-timer",
+  "version": "0.0.1",
+  "authors": [
+    "sparrow.jang <sparrow.jang@gmail.com>"
+  ],
+  "description": "This is timer for countdown",
+  "dependencies": {
+  },
+  "keywords": [
+    "timer"
+  ],
+  "license": "MIT"
+}
