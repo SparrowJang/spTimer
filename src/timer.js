@@ -1,4 +1,4 @@
-(function( window ){
+(function(){
 
   /**
    * @function
@@ -178,9 +178,15 @@
   });
 
 
-  var sp = window.sp || {};
-  sp.Timer = Timer;
-  window.sp = sp;
+  if ( typeof module != "undefined" ) {
+    module.exports = Timer;
+  }
 
-})( window );
+  if ( typeof window != "undefined" ) {
+    var sp = window.sp || {};
+    sp.Timer = Timer;
+    window.sp = sp;
+  }
+
+})();
 
