@@ -146,9 +146,11 @@
      */
     start:function(){
 
-      this.nowDate_ = now();
-      this.trigger( "start" );
-      this.clearFunc = this.listen_();
+      if ( !this.clearFunc ) {
+        this.nowDate_ = now();
+        this.trigger( "start" );
+        this.clearFunc = this.listen_();
+      }
     },
 
     /**
@@ -173,6 +175,7 @@
     stop:function(){
 
       this.clearFunc && this.clearFunc() && this.trigger( "stop" );
+      this.clearFunc = null;
     }
 
   });
